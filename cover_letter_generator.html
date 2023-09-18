@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cover Letter Generator</title>
+  <style>
+    /* Add your CSS styles for the cover letter form and output here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cover Letter Generator</h1>
+    <form id="coverLetterForm">
+      <label for="date">Date:</label>
+      <input type="text" id="date" placeholder="Enter date"><br><br>
+
+      <label for="country">Country:</label>
+      <input type="text" id="country" placeholder="Enter country name"><br><br>
+
+      <label for="travelDate">Travel Dates:</label>
+      <input type="text" id="travelDate" placeholder="Enter travel dates"><br><br>
+
+      <label for="purpose">Purpose of Trip:</label>
+      <input type="text" id="purpose" placeholder="Enter purpose of trip"><br><br>
+
+      <label for="employer">Employer:</label>
+      <input type="text" id="employer" placeholder="Enter employer"><br><br>
+
+      <label for="designation">Designation:</label>
+      <input type="text" id="designation" placeholder="Enter designation"><br><br>
+
+      <label for="passport">Passport Number:</label>
+      <input type="text" id="passport" placeholder="Enter passport number"><br><br>
+
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" placeholder="Enter your name"><br><br>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" placeholder="Enter address"><br><br>
+
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" placeholder="Enter phone number"><br><br>
+
+      <button type="button" onclick="generateCoverLetter()">Generate Cover Letter</button>
+    </form>
+
+    <h2>Cover Letter Output:</h2>
+    <div id="coverLetterOutput"></div>
+  </div>
+
+  <script>
+    function generateCoverLetter() {
+      const date = document.getElementById('date').value;
+      const country = document.getElementById('country').value;
+      const travelDate = document.getElementById('travelDate').value;
+      const purpose = document.getElementById('purpose').value;
+      const employer = document.getElementById('employer').value;
+      const designation = document.getElementById('designation').value;
+      const passport = document.getElementById('passport').value;
+      const name = document.getElementById('name').value;
+      const address = document.getElementById('address').value;
+      const phone = document.getElementById('phone').value;
+
+      const coverLetterOutput = `
+        <p>Date: ${date}</p>
+        <p>To,</p>
+        <p>The visa officer,</p>
+        <p>Embassy of ${country}</p>
+        <p>Subject: Tourism to ${country} of ${name} with Passport No ${passport}</p><br>
+
+        <p>Dear Sir/Madam,</p>
+
+        <p>I would like to apply for a tourist Visa to travel to ${country} from ${travelDate} to ${travelDate}. The purpose of my trip to ${country} is for ${purpose}.</p><br>
+
+        <p>I am currently employed at ${employer} with the title of ${designation} and have received approval for vacation days for the dates specified above. Furthermore, I will be supporting myself financially.</p><br>
+
+        <p>I trust that you will find everything is in order. However, if you have any questions or requirements, please do not hesitate to contact me anytime.</p><br>
+
+        <p>Thank you for reviewing my application.</p>
+
+        <p>Sincerely,</p>
+        <p>${name}</p>
+        <p>Address: ${address}</p>
+        <p>Phone number: ${phone}</p>
+      `;
+
+      document.getElementById('coverLetterOutput').innerHTML = coverLetterOutput;
+    }
+  </script>
+</body>
+</html>
